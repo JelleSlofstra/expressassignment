@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Basic Skeleton</title>
+
+        <!-- here's the syntax for including CSS -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+        <!-- always load your own CSS file after the Booststrap CSS file -->
+        <!-- so you can override Bootstrap CSS when needed  -->
+        <link rel="stylesheet" href="css/main.css" />
+
+        <!-- and include jQuery and Bootstrap -->
+        <script src="/jquery/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+
+        <!-- load your JS file's after (= defer) the DOM is loaded  -->
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body>
+        <main>
+            <h1>cms/user/index.ejs</h1>
+            <header>
+                <!-- look to the views path we've set in app.js -->
+                <%- include('../partials/header') %>
+            </header>
+
+            <section class="content">
+                <!-- did you pass your variables? -->
+                <%- include('../partials/content') %>
+            </section>
+
+            <footer>
+                <%- include('../partials/footer') %>
+            </footer>
+        </main>
+    </body>
+</html>

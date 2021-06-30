@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <% if (page==='books') {%> 
+        <%- include('../partials/booklist') %>
+    <% } else if (page==='home'){ %>
+        <%- include('../partials/home') %>
+    <% } else if (page==='details'){ %>
+        <%- include('../partials/bookdetails') %>
+    <% } else if (page==='new'){ %>
+        <%- include('../partials/new') %>
+    <% } %>  
+</div>

@@ -1,0 +1,25 @@
+<div class="container-fluid row justify-content-around">
+
+    <div class="col-2 container lists"><h3>Filters</h3>
+            <p><a href="/books">All books</a></p>
+            <% for (let category of categories) { %>
+                <p><a href="/books?category=<%=category%>"><%=category%></a></p>
+            <% } %>
+        </div>
+        
+
+    <div class="col-6 container lists">
+        <h3>The books</h3>
+        <% for (let book of books) { %>
+            <div class="row py-3">
+                <div class="col-6 container">
+                    <img src="<%=book.location%>" alt="No image found for <%= book.title%>" class="img-fluid list-img">
+                </div>
+                <div class="col-6 container text-left">
+                    <p><a href="/books/<%=book._id%>"><%=book.title%> by <%=book.author%></a></p>
+                </div>
+            </div>
+        <% } %>
+    </div> 
+
+</div>

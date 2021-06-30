@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <h1>Edit this book-entry</h1>
+
+    <form action="/books/<%=foundBook._id%>?_method=PUT" method="POST">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" value="<%= foundBook.title%>" name="title" placeholder="Title">     
+        </div>
+
+        <div>
+            <label for="subtitle">Subtitle</label>
+            <input type="text" id="subtitle" value="<%= foundBook.subtitle%>" name="subtitle" placeholder="Subtitle">    
+        </div>
+
+        <div>
+            <label for="author">Author</label>
+            <input type="text" id="author" value="<%= foundBook.author%>" name="author" placeholder="Author">    
+        </div>
+
+        <div>
+            <label for="series">Series</label>
+            <input type="text" id="series" value="<%= foundBook.series%>" name="series" placeholder="Series">  
+        </div>
+
+        <div>
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <% for (let category of categories) {%>
+                    <option value="<%=category%>" <%=foundBook.category === category ? 'selected': ''%>><%=category%></option>
+                <% } %>  
+            </select>
+        </div>
+        <button>Submit</button>
+    </form>
+    <a href="/books/<%=foundBook._id%>">Cancel editing</a>
+</div>

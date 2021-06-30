@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <h1><%= foundBook.title %> </h1>
+    <% if (foundBook.subtitle) { %> 
+        <h4><%= foundBook.subtitle %></h4>
+    <% } %>
+    <div class="row justify-content-center">
+        <div class="col-3 container">
+                <img src="<%=foundBook.location%>" alt="No image found for <%= foundBook.title%>" class="img-fluid details-img">
+        </div>
+        <div class="col-3 text-left container lists">
+            <p>Written by: <a href="/author?author=<%=foundBook.author%>"><%=foundBook.author%></a></p>
+
+            <% if (foundBook.series) { %> 
+                <p>Part of the '<a href="/series?series=<%=foundBook.series%>"><%=foundBook.series%></a>' series.</p>
+            <% } %>  
+
+            <p>Category: <a href="/books?category=<%=foundBook.category%>"><%=foundBook.category%></a></p>
+            
+            <% if (foundBook.timesRead) { %> 
+                <p>I read this book <%= foundBook.timesRead %> time(s).</p>
+            <% } %>
+
+            <a href="/books/<%=foundBook._id%>/edit">Edit this book</a>
+            
+            <form action="/books/<%=foundBook._id%>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
